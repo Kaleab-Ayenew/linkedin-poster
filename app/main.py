@@ -62,7 +62,7 @@ def main_task(website):
 
 if __name__ == "__main__":
     mode = ["random", "all", "manual"]
-    current_mode = mode[2]
+    current_mode = mode[1]
     web_sites = data.sites
 
     if current_mode == "random":
@@ -70,8 +70,10 @@ if __name__ == "__main__":
         main_task(selected_website)
 
     elif current_mode == "all":
+        print("Running app loop...")
         while True:
             for site in web_sites:
+
                 main_task(site)
             time.sleep(60*60*3)
 
